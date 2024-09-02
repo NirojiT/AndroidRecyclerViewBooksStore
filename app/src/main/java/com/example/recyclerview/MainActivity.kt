@@ -1,6 +1,7 @@
 package com.example.recyclerview
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -103,7 +104,17 @@ class MainActivity : AppCompatActivity() {
             val books = Book(imageId[i],title[i],author[i])
             newArrayList.add(books)
         }
-        newRecyclerView.adapter = MyAdapter(newArrayList)
+
+        var adapter = MyAdapter(newArrayList)
+        newRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
+            override fun onItemClick(Position: Int) {
+
+                Toast.makeText(this@MainActivity,"You clicked on item num.$Position ",Toast.LENGTH_SHORT).show()
+            }
+
+
+        })
     }
 
 }
