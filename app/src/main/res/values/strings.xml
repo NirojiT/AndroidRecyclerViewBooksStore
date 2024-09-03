@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="book_a">
+        The Software Engineering at Google book (“SWE Book”) is not about
+        programming, per se, but about the engineering practices utilized at
+        Google to make their codebase sustainable and healthy. (These practices
+        are paramount for common infrastructural code such as Abseil.)
+    </string>
+    <string name="book_b">
+        engineering practices utilized at
+        Google to make their codebase sustainable and healthy. (These practices
+        are paramount for common infrastructural code such as Abseil.)
+    </string>
+    <string name="book_c">
+        The fundamental concepts and algorithms covered in the book
+        are often based on those used in both commercial and open-source
+        operating systems. Our aim is to
+    </string>
+    <string name="book_d">
+        With the webbook, the end result will resemble what you might see on a
+        WordPress blog, but organized and presented in a way that invites readers
+        to navigate
+    </string>
+    <string name="book_e">
+        The goal of this book is to provide a basic understanding of the technical
+        design and architecture of the Internet.
+    </string>
 </resources>

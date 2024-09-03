@@ -1,5 +1,7 @@
 package com.example.recyclerview
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageId : Array<Int>
     lateinit var title : Array<String>
     lateinit var author : Array<String>
+    lateinit var description : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,6 +91,15 @@ class MainActivity : AppCompatActivity() {
             "SPM",
             "IWT"
         )
+
+        description = arrayOf(
+            getString(R.string.book_a),
+            getString(R.string.book_b),
+            getString(R.string.book_c),
+            getString(R.string.book_d),
+            getString(R.string.book_e)
+
+        )
          newRecyclerView = findViewById(R.id.myrecyclerView)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         newRecyclerView.setHasFixedSize(true)
@@ -108,9 +120,17 @@ class MainActivity : AppCompatActivity() {
         var adapter = MyAdapter(newArrayList)
         newRecyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
+            @SuppressLint("SuspiciousIndentation")
             override fun onItemClick(Position: Int) {
 
-                Toast.makeText(this@MainActivity,"You clicked on item num.$Position ",Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this@MainActivity,"You clicked on item num.$Position ",Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this@MainActivity,BookDetailedActivity::class.java)
+                    intent.putExtra("Book Title",newArrayList[Position].bookTitle)
+                    intent.putExtra("Book ImageID",newArrayList[Position].titleImage)
+                intent.putExtra("Book Author",newArrayList[Position].bookAuthor)
+                intent.putExtra("Book Description",description[Position])
+                startActivity(intent)
             }
 
 

@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
@@ -42,9 +41,9 @@ class MyAdapter(private val booksList : ArrayList<Book>) :
 
     class MyViewHolder(itemView: View , listener : onItemClickListener):RecyclerView.ViewHolder(itemView){
 
-        val titleImg : ShapeableImageView = itemView.findViewById(R.id.title_image)
-        val booktitle : TextView = itemView.findViewById(R.id.tvTitle)
-        val bookauthor : TextView = itemView.findViewById(R.id.tvAuthor)
+        val titleImg : ShapeableImageView = itemView.findViewById(R.id.title_imageD)
+        val booktitle : TextView = itemView.findViewById(R.id.tvTitleD)
+        val bookauthor : TextView = itemView.findViewById(R.id.tvAuthorD)
 
         init {
             itemView.setOnClickListener {
